@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/*
+			Is craneId global or local on line 23? 
+			Answer: craneID is set as a variable in the global window. The variable sits outside any functions and or any other local window.
+
+			Why is isViable not global on line 33? 
+			Answer: isViable is local because it lies within a function. 
+			
+			Put into english what makes a "viable" crane by reading through the function isViableCrane
+			Answer: If I am reading the statement above correctly, function isViableCrane is "viable" when crane length is greater than crane height.
+
+			Erty's answers:
+			Is craneId global or local on line 23? 
+			Answer: craneID is instantiated. crandID as a variable gets hoisted up so it's global. 
+
+			Why is isViable not global on line 33? 
+			Answer: isViable is local because it lies within a function. As a rule of thumb, put your variables at the top of the function. Example: 
+
+			function isViableCrane(crane) {
+			var isViable;
+			if (crane[LENGTH] > crane[HEIGHT]) {
+				isViable = true;
+			} else {
+				isViable = false;
+			}
+			return isViable;
+			}
+			
+			Put into english what makes a "viable" crane by reading through the function isViableCrane
+			Answer: 
+		*/
+
+		//Indexes for the crane array
+		var ID = 0;
+		var HEIGHT = 1;
+		var LENGTH = 2;
+
+		function createCrane(boomHeight, hoistLength) {
+			craneId = craneId + 1;
+			return [
+				craneId,
+				boomHeight,
+				hoistLength
+			];
+		}
+
+		function isViableCrane(crane) {
+			if (crane[LENGTH] > crane[HEIGHT]) {
+				isViable = true;
+			} else {
+				isViable = false;
+			}
+			var isViable;
+			return isViable;
+		}
+
+		var craneId = 0;
+		var cranes = [
+			createCrane(10, 15),
+			createCrane(12, 5),
+			createCrane(7, 10)
+		];
+
+		for (var c in cranes) {
+			if (isViableCrane(cranes[c])) {
+				console.log(cranes[c]);
+			}
+		}
+	</script>
+</body>
+
+</html>

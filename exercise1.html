@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/*
+			Exercise 1
+			The following code should log to console "Homer", "Barney", "Marge"
+			How should we fix this?
+		*/
+		var WIDTH = 0;
+		var HEIGHT = 1;
+		var COLOR = 2;
+		var NAME = 3;
+
+		function createCharacter(width, height, color, name) {
+			var newCharacter = [ // missing a var declaration. Must add var to make it "var newCharacter"
+				width,
+				height,
+				color,
+				name
+			];
+			return newCharacter;
+		}
+		widget = createCharacter(10, 12, "yellow", "Homer"); // need to add var and make it "var widget"
+		widget2 = createCharacter(12, 18, "blue", "Barney");	// need to add var and make it "var widget2"
+		widget3 = createCharacter(4, 7, "red", "Marge");	// need to add var and make it "var widget3"
+
+
+
+		//Hey! Don't re-order these.
+		console.log(widget[NAME]);
+		console.log(widget2[NAME]);
+		console.log(widget3[NAME]);
+	</script>
+</body>
+
+</html>
